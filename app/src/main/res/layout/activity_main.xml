@@ -142,36 +142,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:button="@drawable/radiobutton_selector"
-
-                android:text="A"
+                android:button="@null"
+                android:drawableBottom="@drawable/radiobutton_selector"
+                android:gravity="center"
+                android:text="А"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:button="@drawable/radiobutton_selector"
+                android:button="@null"
+                android:drawableBottom="@drawable/radiobutton_selector"
                 android:gravity="center"
                 android:text="Б"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="@drawable/radiobutton_selector"
+                android:gravity="center"
+                android:text="В"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="@drawable/radiobutton_selector"
+                android:gravity="center"
+                android:text="Г"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </RadioGroup>
 
     </LinearLayout>
