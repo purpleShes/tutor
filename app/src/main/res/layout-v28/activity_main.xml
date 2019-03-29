@@ -218,13 +218,4 @@
 
         </LinearLayout>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="105dp"
-        android:layout_marginBottom="19dp"
-        android:background="@drawable/ic_arrow_back_black_24dp" />
-
-</RelativeLayout>
+   </RelativeLayout>
