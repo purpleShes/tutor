@@ -6,11 +6,15 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/Toolbar">
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="2dp">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/def_margin"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_menu_black_24dp" />
     </android.support.v7.widget.Toolbar>
@@ -23,12 +27,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/nav_button_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/def_margin"
+                android:layout_marginTop="@dimen/def_margin"
+                android:layout_marginEnd="@dimen/def_margin"
+                android:drawableStart="@drawable/ic_keyboard_arrow_left_white_24dp"
+                android:paddingEnd="8dp"
+                android:text="Попередній"
+                android:fontFamily="@string/font_family_condensed"
+                android:textColor="@android:color/white"
+                android:textSize="16dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/def_margin"
+                android:layout_marginEnd="@dimen/def_margin"
+                android:layout_marginRight="@dimen/def_margin"
+                android:drawableEnd="@drawable/ic_keyboard_arrow_right_white_24dp"
+                android:paddingStart="8dp"
+                android:text="Наступний"
+                android:fontFamily="@string/font_family_condensed"
+                android:textColor="@android:color/white"
+                android:textSize="16dp" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card_view"
-                android:layout_width="match_parent"
+                android:layout_width="384dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp">
+                android:layout_below="@id/nav_button_previous"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@android:color/white"
+                android:padding="8dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -37,11 +76,12 @@
 
                     <TextView
                         android:id="@+id/task"
-                        style="@style/HalfBoldTextStyle"
+                        style="@style/TextStyle"
                         android:layout_alignParentTop="true"
-                        android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
-                        android:text="Правильний наголос в усіх словах рядка: " />
+                        android:fontFamily="@string/font_family_condensed"
+                        android:text="Правильний наголос в усіх словах рядка: "
+                        android:textColor="@android:color/black" />
 
                     <LinearLayout
                         android:id="@+id/answer1"
@@ -52,7 +92,7 @@
 
                         <TextView
                             android:id="@+id/letter1"
-                            style="@style/BoldTextStyle"
+                            style="@style/TextStyle.BoldBlackTextStyle"
                             android:layout_marginEnd="8dp"
                             android:text="A" />
 
@@ -60,6 +100,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@string/font_family_regular"
                             android:text="Жоржина, машина, картошина" />
                     </LinearLayout>
 
@@ -72,7 +113,7 @@
 
                         <TextView
                             android:id="@+id/letter2"
-                            style="@style/BoldTextStyle"
+                            style="@style/TextStyle.BoldBlackTextStyle"
                             android:layout_marginEnd="8dp"
                             android:text="Б" />
 
@@ -80,6 +121,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@string/font_family_regular"
                             android:text="Бі бо бу" />
                     </LinearLayout>
 
@@ -92,7 +134,7 @@
 
                         <TextView
                             android:id="@+id/letter3"
-                            style="@style/BoldTextStyle"
+                            style="@style/TextStyle.BoldBlackTextStyle"
                             android:layout_marginEnd="8dp"
                             android:text="В" />
 
@@ -100,6 +142,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@string/font_family_regular"
                             android:text="Труляля, траляля" />
                     </LinearLayout>
 
@@ -112,7 +155,7 @@
 
                         <TextView
                             android:id="@+id/letter4"
-                            style="@style/BoldTextStyle"
+                            style="@style/TextStyle.BoldBlackTextStyle"
                             android:layout_marginEnd="8dp"
                             android:text="Г" />
 
@@ -120,72 +163,53 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@string/font_family_regular"
                             android:text="ЖОПА" />
                     </LinearLayout>
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/answer4"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio"
+                            style="@style/TextStyle.BoldBlackTextStyle"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/radiobutton_selector"
+                            android:gravity="center"
+                            android:text="А" />
+
+                        <RadioButton
+                            style="@style/TextStyle.BoldBlackTextStyle"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/radiobutton_selector"
+                            android:gravity="center"
+                            android:text="Б" />
+
+                        <RadioButton
+                            style="@style/TextStyle.BoldBlackTextStyle"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/radiobutton_selector"
+                            android:gravity="center"
+                            android:text="В" />
+
+                        <RadioButton
+                            style="@style/TextStyle.BoldBlackTextStyle"
+                            android:layout_weight="1"
+                            android:button="@null"
+                            android:drawableBottom="@drawable/radiobutton_selector"
+                            android:gravity="center"
+                            android:text="Г" />
+                    </RadioGroup>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
-
-            <RadioGroup
-                android:id="@+id/radio_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/card_view"
-                android:layout_marginLeft="16dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    style="@style/BoldTextStyle"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/radiobutton_selector"
-                    android:gravity="center"
-                    android:text="А" />
-
-
-                <RadioButton
-                    style="@style/BoldTextStyle"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/radiobutton_selector"
-                    android:gravity="center"
-                    android:text="Б" />
-
-                <RadioButton
-                    style="@style/BoldTextStyle"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/radiobutton_selector"
-                    android:gravity="center"
-                    android:text="В" />
-
-                <RadioButton
-                    style="@style/BoldTextStyle"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/radiobutton_selector"
-                    android:gravity="center"
-                    android:text="Г" />
-            </RadioGroup>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/card_view"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="16dp">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:src="@drawable/ic_keyboard_arrow_left_white_24dp" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
-            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>
